@@ -3,5 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_landing">LandingActivity</string>
     <string name="title_activity_notification">NotificationActivity</string>
+    <string name="for_push_notification_click_the_floating_button">For push notification click the floating button</string>
+    <string name="next">Next</string>
+    <string name="title_activity_next">NextActivity</string>
 
 </resources>

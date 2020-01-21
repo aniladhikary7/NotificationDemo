@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.george.mynotification.next.NextActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -20,12 +21,15 @@ import androidx.core.app.NotificationManagerCompat;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import java.util.Random;
 
 import static android.app.Notification.VISIBILITY_PRIVATE;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Button nextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 displayNotification();
             }
         });
+        nextBtn = findViewById(R.id.button);
+        nextBtn.setOnClickListener(this);
     }
 
     @Override
@@ -130,4 +136,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        if (v == nextBtn){
+            startActivity(new Intent(this, NextActivity.class));
+        }
+    }
 }
